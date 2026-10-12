@@ -1,0 +1,15 @@
+{
+  "name": "mathpath-prototype",
+  "version": "2.0.0",
+  "private": true,
+  "description": "MathPath: adaptive algebra practice prototype with a teacher's class dashboard. Static site, no build step.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "pages": "node tools/make-pages.mjs",
+    "serve": "node tools/serve.cjs . 4340 /mathpath-prototype/",
+    "site": "node tools/make-site.mjs",
+    "shots": "node tools/screenshots.cjs"
+  },
+  "license": "MIT"
+}
