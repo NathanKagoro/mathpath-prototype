@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Student</h1>
+      <p>Lesson outcomes and mastery progress in one view.</p>
+    </header>
+    <nav class="top-nav">
+      <a href="index.html"><span class="nav-pill">🏠 Home</span></a>
+      <a href="practice.html"><span class="nav-pill">🎯 Practice</span></a>
+      <a href="results.html"><span class="nav-pill active">📊 Results + Progress</span></a>
+      <a href="profile.html"><span class="nav-pill">👤 Profile</span></a>
+    </nav>
+
+    <section class="panel">
+      <h2>Lesson Complete</h2>
+      <div class="result-grid">
+        <div class="chip"><span>Score</span><strong>78%</strong></div>
+        <div class="chip"><span>XP Earned</span><strong>+120</strong></div>
+        <div class="chip"><span>Mastery Gain</span><strong>+12%</strong></div>
+      </div>
+      <div class="two-col" style="margin-top:14px;">
+        <div>
+          <h3>Strengths</h3>
+          <ul>
+            <li>Correctly solved one-step equations for x</li>
+            <li>Improved on substitution tasks</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Needs Practice</h3>
+          <ul>
+            <li>Distribution before solving for x</li>
+            <li>Negative sign handling</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:16px;">Mastery Progress</h3>
+      <div class="mastery-item"><span>Variables</span><div class="bar"><div class="fill" style="width:80%"></div></div><span>80%</span></div>
+      <div class="mastery-item"><span>Distribution</span><div class="bar"><div class="fill" style="width:50%"></div></div><span>50%</span></div>
+      <div class="mastery-item"><span>Word Problems</span><div class="bar"><div class="fill" style="width:30%"></div></div><span>30%</span></div>
+      <div class="mastery-item"><span>Equations</span><div class="bar"><div class="fill" style="width:70%"></div></div><span>70%</span></div>
+      <div class="callout">Next recommendation: complete Distribution reinforcement homework to unlock Word Problems.</div>
+    </section>
+  </main>
+</body>
+</html>

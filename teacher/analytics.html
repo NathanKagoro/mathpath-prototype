@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Teacher Dashboard</h1>
+      <p>Misconception analysis and propagation.</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="index.html"><span class="nav-pill">🏫 Overview</span></a>
+      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
+      <a href="analytics.html"><span class="nav-pill active">🧠 Analytics</span></a>
+      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
+      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
+      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
+    </nav>
+
+    <section class="panel">
+      <h2>Student Progress vs Expected Progress</h2>
+      <div class="analytics-chart">
+        <svg viewBox="0 0 620 260" width="100%" height="260" aria-label="Progress comparison chart">
+          <line x1="45" y1="20" x2="45" y2="225" stroke="#b8c8f4" stroke-width="2"/>
+          <line x1="45" y1="225" x2="590" y2="225" stroke="#b8c8f4" stroke-width="2"/>
+
+          <line x1="45" y1="185" x2="590" y2="185" stroke="#e5edff" stroke-width="1"/>
+          <line x1="45" y1="145" x2="590" y2="145" stroke="#e5edff" stroke-width="1"/>
+          <line x1="45" y1="105" x2="590" y2="105" stroke="#e5edff" stroke-width="1"/>
+          <line x1="45" y1="65" x2="590" y2="65" stroke="#e5edff" stroke-width="1"/>
+
+          <polyline fill="none" stroke="#6c4cf1" stroke-width="4" points="45,200 136,176 227,150 318,124 409,98 500,76 590,58"/>
+          <polyline fill="none" stroke="#3b82f6" stroke-width="4" points="45,206 136,192 227,168 318,148 409,132 500,122 590,114"/>
+
+          <text x="35" y="232" font-size="12" fill="#5a6798">0%</text>
+          <text x="29" y="190" font-size="12" fill="#5a6798">20%</text>
+          <text x="29" y="150" font-size="12" fill="#5a6798">40%</text>
+          <text x="29" y="110" font-size="12" fill="#5a6798">60%</text>
+          <text x="29" y="70" font-size="12" fill="#5a6798">80%</text>
+
+          <text x="55" y="246" font-size="12" fill="#5a6798">Week 1</text>
+          <text x="140" y="246" font-size="12" fill="#5a6798">Week 2</text>
+          <text x="230" y="246" font-size="12" fill="#5a6798">Week 3</text>
+          <text x="320" y="246" font-size="12" fill="#5a6798">Week 4</text>
+          <text x="410" y="246" font-size="12" fill="#5a6798">Week 5</text>
+          <text x="500" y="246" font-size="12" fill="#5a6798">Week 6</text>
+          <text x="560" y="246" font-size="12" fill="#5a6798">Now</text>
+        </svg>
+        <div class="chart-legend">
+          <span class="legend-key"><span class="legend-line expected"></span>Expected progress</span>
+          <span class="legend-key"><span class="legend-line actual"></span>Current class progress</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top:14px;">Priority Help Areas</h3>
+      <div class="support-grid">
+        <div class="support-card">
+          <strong>1. Distribution Accuracy</strong>
+          <p class="muted">Students miss multiplying every term inside brackets.</p>
+        </div>
+        <div class="support-card">
+          <strong>2. Sign Handling</strong>
+          <p class="muted">Negative signs are frequently moved incorrectly across the equals sign.</p>
+        </div>
+        <div class="support-card">
+          <strong>3. Equation Isolation</strong>
+          <p class="muted">Some learners stop early and do not finish solving for x.</p>
+        </div>
+        <div class="support-card">
+          <strong>4. Arithmetic Fluency</strong>
+          <p class="muted">Final simplification arithmetic is slowing mastery completion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Top Misconception</h2>
+      <p>Failure to distribute before solving for x.</p>
+      <p class="math">2(x + 3) = 21</p>
+      <p class="math">Incorrect: 2x + 3 = 21</p>
+      <p class="math">Correct step: 2x + 6 = 21, then solve x = 7.5</p>
+      <div class="callout">41% of students are affected. Suggested intervention: fare-pricing and shopping bundle examples.</div>
+    </section>
+  </main>
+</body>
+</html>

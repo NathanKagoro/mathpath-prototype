@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Teacher Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Teacher Dashboard</h1>
+      <p>Class visibility and lesson control.</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="index.html"><span class="nav-pill active">🏫 Overview</span></a>
+      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
+      <a href="analytics.html"><span class="nav-pill">🧠 Analytics</span></a>
+      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
+      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
+      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
+      <a href="../student/index.html"><span class="nav-pill">🎓 Student View</span></a>
+    </nav>
+
+    <section class="panel">
+      <h2>Select Class</h2>
+      <p class="muted">Choose a class to manage. Only Year 9 currently has live demo data.</p>
+      <div class="class-grid">
+        <div class="class-tile">
+          <strong>Year 7 Mathematics</strong>
+        </div>
+        <div class="class-tile">
+          <strong>Year 8 Mathematics</strong>
+        </div>
+        <div class="class-tile active">
+          <strong>Year 9 Mathematics</strong>
+          <span class="badge open">Active Class</span>
+        </div>
+        <div class="class-tile">
+          <strong>Year 10 Mathematics</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Class: Year 9 Mathematics</h2>
+      <p class="muted">Current topic: Distribution and solving for x</p>
+      <div class="progress-wrap">
+        <span>Class Understanding</span>
+        <div class="bar"><div class="fill" style="width:62%"></div></div>
+        <span>62%</span>
+      </div>
+      <div class="two-col" style="margin-top:14px;">
+        <div>
+          <h3>Top Struggles</h3>
+          <ul>
+            <li>Distribution errors: 41%</li>
+            <li>Sign confusion: 18%</li>
+            <li>Arithmetic slips: 12%</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Students Needing Attention</h3>
+          <ul>
+            <li>John M</li>
+            <li>Aisha K</li>
+            <li>Daniel T</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout">Recommendation: reteach distribution using transport fare examples, then assign reinforcement.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Prepared Lesson Plan</h2>
+      <div class="lesson-plan-item">
+        <strong>Week 2: Multi-step Distribution (40 min)</strong>
+        <p>Objective: Students solve equations with brackets and isolate x accurately.</p>
+        <span class="badge" id="plan-status">Closed to students</span>
+      </div>
+      <div class="actions">
+        <button class="primary" id="open-plan-btn">Open to Students</button>
+      </div>
+      <p id="open-plan-feedback" class="feedback neutral">When opened, this lesson appears as the active node on student path.</p>
+    </section>
+  </main>
+  <script src="teacher.js"></script>
+</body>
+</html>

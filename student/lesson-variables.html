@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Lesson Variables</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Lesson: Variables</h1>
+      <p>Practice isolating x in one-step and two-step equations.</p>
+      <a href="index.html" class="secondary" style="display:inline-block;text-decoration:none;">Back to Lesson Path</a>
+    </header>
+
+    <section class="panel">
+      <h2>Example Set</h2>
+      <p class="math">2x + 5 = 17</p>
+      <p>Subtract 5 from both sides, then divide by 2. x = 6.</p>
+      <p class="math">x/3 + 4 = 10</p>
+      <p>Subtract 4, then multiply by 3. x = 18.</p>
+      <div class="actions">
+        <button class="secondary" id="generate-variables-context">Generate Context</button>
+      </div>
+      <p class="hint hidden" id="variables-context">Context: Two identical meal combos cost x each and add a 5-shilling service fee, total 17.</p>
+    </section>
+  </main>
+
+  <script>
+    const variableContexts = [
+      'Context: Two identical meal combos cost x each and add a 5-shilling service fee, total 17.',
+      'Context: Two football jerseys at x each plus 5 for printing total 17.',
+      'Context: Two stationeries at x each plus a 5-shilling bag fee total 17.'
+    ];
+    let variableIndex = 0;
+    const variableButton = document.getElementById('generate-variables-context');
+    const variableText = document.getElementById('variables-context');
+    variableButton.addEventListener('click', () => {
+      if (variableText.classList.contains('hidden')) {
+        variableText.classList.remove('hidden');
+        variableButton.textContent = '';
+        variableText.textContent = variableContexts[variableIndex];
+        return;
+      }
+    });
+  </script>
+</body>
+</html>

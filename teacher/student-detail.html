@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Student Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Teacher Dashboard</h1>
+      <p>Individual learner profile.</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="index.html"><span class="nav-pill">🏫 Overview</span></a>
+      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
+      <a href="analytics.html"><span class="nav-pill">🧠 Analytics</span></a>
+      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
+      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
+      <a href="student-detail.html"><span class="nav-pill active">👥 Student Detail</span></a>
+    </nav>
+
+    <section class="panel">
+      <h2>Student Details</h2>
+      <p class="muted">Top 3 students include generated analytics. Others show placeholder status.</p>
+
+      <div class="student-chip-list" id="student-chip-list">
+        <button class="student-chip active" data-student="John M">John M</button>
+        <button class="student-chip" data-student="Amina J">Amina J</button>
+        <button class="student-chip" data-student="Sarah K">Sarah K</button>
+        <button class="student-chip" data-student="Daniel T">Daniel T</button>
+        <button class="student-chip" data-student="Fatima N">Fatima N</button>
+      </div>
+
+      <h3 id="student-name">Student: John M</h3>
+      <div id="student-data-panel">
+        <div class="mastery-item"><span>Distribution</span><div class="bar"><div id="dist-fill" class="fill" style="width:40%"></div></div><span id="dist-text">40%</span></div>
+        <div class="mastery-item"><span>Equations</span><div class="bar"><div id="eq-fill" class="fill" style="width:70%"></div></div><span id="eq-text">70%</span></div>
+        <h3 style="margin-top:14px;">Current Misconception</h3>
+        <p id="misconception-text">John distributes only the first term and then attempts to solve for x.</p>
+        <h3>Attempt History</h3>
+        <ul id="attempt-history">
+          <li>5 incorrect attempts</li>
+          <li>2 partial improvements</li>
+          <li>1 correct after scaffold hint</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script src="teacher.js"></script>
+</body>
+</html>

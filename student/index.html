@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Student Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Student</h1>
+      <p>Your adaptive learning journey.</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="index.html"><span class="nav-pill active">🏠 Home</span></a>
+      <a href="practice.html"><span class="nav-pill">🎯 Practice</span></a>
+      <a href="results.html"><span class="nav-pill">📊 Results + Progress</span></a>
+      <a href="profile.html"><span class="nav-pill">👤 Profile</span></a>
+    </nav>
+
+    <section class="home-grid">
+      <div class="panel hero">
+        <div>
+          <h2>Good afternoon, Amina</h2>
+          <p>Continue your Algebra path to keep your streak alive.</p>
+          <div class="homework-banner">📘 Homework assigned today: Distribution Reinforcement (Due tomorrow)</div>
+          <div class="actions">
+            <a class="primary" href="lesson-distribution.html" style="display:inline-block;text-decoration:none;">Do Homework</a>
+          </div>
+        </div>
+        <div class="streak-xp">
+          <div class="stat-big streak">
+            <span class="label">Streak</span>
+            <strong>🔥 4 days</strong>
+          </div>
+          <div class="stat-big xp">
+            <span class="label">XP</span>
+            <strong>1,240</strong>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel leaderboard">
+        <h3>Class Leaderboard</h3>
+        <ol>
+          <li class="rank-row top"><span class="rank-pos">1</span><span>Amina J</span><span class="rank-xp">1,240 XP</span></li>
+          <li class="rank-row top"><span class="rank-pos">2</span><span>Fatima N</span><span class="rank-xp">1,180 XP</span></li>
+          <li class="rank-row top"><span class="rank-pos">3</span><span>Sarah K</span><span class="rank-xp">1,050 XP</span></li>
+          <li class="rank-row"><span class="rank-pos">4</span><span>Daniel T</span><span class="rank-xp">990 XP</span></li>
+          <li class="rank-row"><span class="rank-pos">5</span><span>John M</span><span class="rank-xp">915 XP</span></li>
+        </ol>
+        <p class="muted" style="margin-top:10px;">You are currently ranked #1 in your class.</p>
+      </aside>
+    </section>
+
+    <section class="panel">
+      <h2>Algebra Journey</h2>
+      <p class="muted">Tap any unlocked lesson node. Path follows a zigzag journey across the page.</p>
+
+      <div class="duo-tree">
+        <a class="tree-node done" href="lesson-introduction.html">
+          <span class="orb">✓</span>
+          <span class="tree-card">
+            <strong>Lesson 1: Introduction</strong>
+            <p>Solve basic one-step equations for x.</p>
+          </span>
+        </a>
+
+        <a class="tree-node done" href="lesson-variables.html">
+          <span class="orb">✓</span>
+          <span class="tree-card">
+            <strong>Lesson 2: Variables</strong>
+            <p>Use substitution and isolate x in simple expressions.</p>
+          </span>
+        </a>
+
+        <a class="tree-node current" href="lesson-distribution.html">
+          <span class="orb">▶</span>
+          <span class="tree-card">
+            <strong>Lesson 3: Distribution</strong>
+            <p>Current lesson. Solve equations involving brackets.</p>
+          </span>
+        </a>
+
+        <span class="tree-node locked">
+          <span class="orb">🔒</span>
+          <span class="tree-card">
+            <strong>Lesson 4: Word Problems</strong>
+            <p>Unlock after Lesson 3 mastery reaches 70%.</p>
+          </span>
+        </span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

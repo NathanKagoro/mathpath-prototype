@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathPath Lesson Distribution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-top"></div>
+  <div class="bg-shape bg-shape-bottom"></div>
+
+  <main class="shell">
+    <header class="top-header">
+      <h1>MathPath Lesson: Distribution</h1>
+      <p>Opened from your lesson tree.</p>
+      <a href="index.html" class="secondary" style="display:inline-block;text-decoration:none;">Back to Lesson Path</a>
+    </header>
+
+    <section class="panel split">
+      <div>
+        <h2>Solve for x</h2>
+        <div class="progress-wrap">
+          <span>Lesson Progress</span>
+          <div class="bar"><div id="lesson-progress" class="fill" style="width: 38%"></div></div>
+          <span id="lesson-progress-text">38%</span>
+        </div>
+
+        <p id="question-counter">Question 1 of 5</p>
+        <p class="question-text" id="lesson-problem">3(x + 2) = 18</p>
+
+        <label for="lesson-answer">Enter x</label>
+        <input id="lesson-answer" type="text" placeholder="Type answer here">
+
+        <div class="actions">
+          <button class="primary" id="check-answer">Check Answer</button>
+          <button class="secondary" id="generate-context">Generate Context</button>
+          <button class="secondary" id="toggle-lesson-hint">Show Hint</button>
+          <button class="secondary" id="scan-lesson-working-btn">Scan Working</button>
+        </div>
+
+        <p id="lesson-feedback" class="feedback neutral">Isolate x after expanding brackets.</p>
+        <p id="pinpoint-feedback" class="pinpoint" style="display:none;"></p>
+
+        <div id="lesson-scan-panel" class="scan-panel hidden">
+          <strong>Scanned Working Demo</strong>
+          <p class="muted" id="scan-question-label">Question: 3(x + 2) = 18</p>
+          <pre class="scan-sample" id="scan-working-text">3(x + 2) = 18
+3x + 2 = 18
+3x = 16
+x = 4</pre>
+          <p class="pinpoint" style="display:block;" id="scan-working-feedback">Where it went wrong: distribution was applied incorrectly. 3(x + 2) should become 3x + 6, not 3x + 2.</p>
+        </div>
+      </div>
+
+      <aside class="panel" style="padding:14px;">
+        <h3>Context</h3>
+        <p id="lesson-context" class="hint hidden">A student buys 3 packs, each pack has x pens and 2 pencils. Total items are 18.</p>
+        <div class="hint hidden" id="lesson-hint">Hint: Divide both sides after simplifying.</div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="lesson.js"></script>
+</body>
+</html>
