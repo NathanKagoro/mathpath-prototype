@@ -34,8 +34,7 @@ const URL = `http://127.0.0.1:${PORT}/mathpath-prototype/`;
   const text = (page, sel) => page.$eval(sel, (el) => el.textContent.trim());
   const shot = (page, name) => page.screenshot({ path: path.join(outDir, `flow-${name}.png`), fullPage: true });
   async function answer(page, value) {
-    await page.click('#answer', { clickCount: 3 });
-    await page.keyboard.press('Backspace');
+    await page.$eval('#answer', (el) => { el.value = ''; el.focus(); });
     await page.type('#answer', value);
     await page.keyboard.press('Enter'); // the audit found Enter did nothing
   }
