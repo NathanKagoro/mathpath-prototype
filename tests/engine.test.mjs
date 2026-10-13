@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   MINUS, frac, eq, formatNumber, formatAnswer, lin, solveEquation, makeQuestion, createRng, generate,
-  createLadder, currentQuestion, advance, parseAnswer, checkAnswer, LESSONS, lessonQuestions, LEVELS,
+  createLadder, currentQuestion, substitute, advance, parseAnswer, checkAnswer, LESSONS, lessonQuestions, LEVELS,
   UP_AFTER, DOWN_AFTER, SLIP_CATEGORIES,
 } from '../assets/js/engine.mjs';
 
@@ -245,4 +245,12 @@ test('word problems use shillings with thousands separators, never dollars', () 
   const neg = makeQuestion({ kind: 'both', a: -2, b: 3, c: 4, d: -9 });
   assert.match(neg.wordProblem, /I think of a number/);
   assert.equal(LEVELS.length, 4);
+});
+
+test('substitute shows what a typed answer gives on each side', () => {
+  const wrong = substitute('3(x + 2) = 18', frac(5));
+  same(wrong.left, 21); same(wrong.right, 18);
+  const right = substitute(`5x ${MINUS} 3 = 2x + 9`, frac(4));
+  same(right.left, right.right);
+  same(substitute('x/3 + 4 = 10', frac(16, 3)).left, frac(52, 9));
 });

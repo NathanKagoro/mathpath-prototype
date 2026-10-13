@@ -1,35 +1,69 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MathPath: algebra practice that adapts</title>
+<meta name="description" content="A prototype for practising algebra. The questions get harder as you get them right, and a class board shows the teacher which slip is holding people up.">
+<meta name="theme-color" content="#b58a5a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MathPath: algebra practice that adapts">
+<meta property="og:description" content="A prototype for practising algebra. The questions get harder as you get them right, and a class board shows the teacher which slip is holding people up.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/cover.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
+<body class="cover">
+<a class="skip" href="#main">Skip to the books</a>
+<main id="main" class="desk">
+  <header class="slip">
+    <h1>MathPath</h1>
+    <p>Algebra practice that gets harder as you get it right, and a class board that shows the teacher which slip is holding people up. It is a prototype. Pick up a book to try it.</p>
+  </header>
 
-  <main class="shell role-gateway">
-    <section class="panel center-panel">
-      <h1>MathPath</h1>
-      <p>Choose a role to open the prototype experience.</p>
-      <div class="gateway-grid">
-        <a class="tile-link" href="student/index.html">
-          <span class="tile-icon">🎓</span>
-          <strong>Student App</strong>
-          <span>Adaptive practice, lesson tree, streaks, and progress.</span>
-        </a>
-        <a class="tile-link" href="teacher/index.html">
-          <span class="tile-icon">🧑‍🏫</span>
-          <strong>Teacher Dashboard</strong>
-          <span>Class understanding, misconceptions, and lesson control.</span>
-        </a>
-      </div>
-    </section>
-  </main>
+  <div class="covers">
+    <a class="exbook" href="student/index.html">
+      <span class="exbook-print"><b>Exercise book</b> <span>Squared 5&nbsp;mm</span></span>
+      <span class="exbook-label">
+        <span class="row"><b>Name</b> <i>You</i></span>
+        <span class="row"><b>Subject</b> <i>Algebra, solving for x</i></span>
+        <span class="row"><b>Class</b> <i>Form 2</i></span>
+      </span>
+      <span class="exbook-tables" aria-hidden="true"><span>1 × 2 = 2<br>2 × 2 = 4<br>3 × 2 = 6<br>4 × 2 = 8<br>5 × 2 = 10<br>6 × 2 = 12</span><span>1 × 3 = 3<br>2 × 3 = 6<br>3 × 3 = 9<br>4 × 3 = 12<br>5 × 3 = 15<br>6 × 3 = 18</span><span>1 × 4 = 4<br>2 × 4 = 8<br>3 × 4 = 12<br>4 × 4 = 16<br>5 × 4 = 20<br>6 × 4 = 24</span><span>1 × 5 = 5<br>2 × 5 = 10<br>3 × 5 = 15<br>4 × 5 = 20<br>5 × 5 = 25<br>6 × 5 = 30</span></span>
+      <svg class="sticker exbook-sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="assets/icons.svg#st-star"/></svg>
+      <span class="flag">Open the student book</span>
+    </a>
+
+    <a class="planner" href="teacher/index.html">
+      <span class="planner-title">Teacher's planner</span>
+      <span class="planner-sub">Form 2 Mathematics. Who is stuck, and on what.</span>
+      <svg class="planner-grid" viewBox="0 0 200 110" aria-hidden="true" fill="none" stroke="#f5f2e6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M7 19.1Q101 21.4 146.5 20.6L192 19.8M7.9 49.5Q100.1 51.5 145.8 50.4L191.5 49.3M8.5 80Q99.4 80.7 145.5 80.4L191.6 80.1M49.6 7Q50.5 55.8 49.9 79.5L49.4 103.3M85.3 5.6Q87.1 55.5 86.1 80.2L85.1 104.8M122.1 6.2Q123.4 55.9 122.8 80.4L122.2 104.8M158.7 5.1Q158.3 54.7 158.1 78.9L157.9 103" opacity=".55"/>
+<path d="M54.2 31.5L59.7 36.9L70.9 22.9M91.4 31.4L95.7 36.7L106.3 21.3M163.8 30.6L167.4 37.3L178.7 21.1M55.4 61.8L60.1 67.7L71.3 52.8M126.2 61.1L132.3 67.8L143.9 52.7M91.2 91.9L96.9 97.1L107.6 81M127 90.7L132.4 97.1L143.5 83M163.1 91.6L167.9 97.3L179.5 82.1"/>
+<path stroke="#ffbcc7" d="M127.6 23.5L139 35M140.9 24.7L128.3 35M92.2 54.2L104.4 67M103.6 55L92.3 66.6M164.2 54.7L175.3 67M176 54.1L163.3 65.8M55.4 84.6L68.7 96.5M68.3 85L56.2 96.5"/>
+<path stroke="#ffe27a" d="M13.4 30Q23.2 28.3 32 29.7L40.9 31.1M11.1 60.2Q23.9 58.1 31.5 58.7L39 59.3M11.8 89.9Q23 86.5 31 87.5L39 88.6"/></svg>
+      <span class="flag">Open the teacher's board</span>
+    </a>
+  </div>
+
+  <aside class="sticky-note">
+    <h2>Before you start</h2>
+    <p>The class, the classmates and their scores are scripted demo data. Your own answers are marked for real, and your progress is saved only in this browser.</p>
+  </aside>
+
+  <svg class="desk-pencil" viewBox="0 0 420 40" aria-hidden="true"><path d="M8 20l34-12v24z" fill="#e8c9a0"/><path d="M8 20l12-4.2v8.4z" fill="#2b2d33"/><path d="M42 8h318v24H42z" fill="#f2b705"/><path d="M42 16h318M42 24h318" stroke="#c98f00" stroke-width="1.5"/><path d="M360 8h22v24h-22z" fill="#b9bcc4"/><path d="M366 8v24M374 8v24" stroke="#8a8e98" stroke-width="2"/><path d="M382 8h22a8 8 0 0 1 8 8v8a8 8 0 0 1-8 8h-22z" fill="#e58c9a"/></svg>
+
+  <footer class="desk-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+  </footer>
+</main>
 </body>
 </html>

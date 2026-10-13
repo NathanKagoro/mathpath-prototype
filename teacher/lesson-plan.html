@@ -1,63 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Lesson Plan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson plan: MathPath teacher's board</title>
+<meta name="description" content="A prepared 40-minute lesson plan on equations with brackets, pinned to the teacher's board.">
+<meta name="theme-color" content="#25483b">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lesson plan: MathPath teacher's board">
+<meta property="og:description" content="A prepared 40-minute lesson plan on equations with brackets, pinned to the teacher's board.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/teacher/lesson-plan.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/teacher.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Teacher Dashboard</h1>
-      <p>Prepared lesson plan and release control.</p>
-    </header>
-
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏫 Overview</span></a>
-      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
-      <a href="analytics.html"><span class="nav-pill">🧠 Analytics</span></a>
-      <a href="lesson-plan.html"><span class="nav-pill active">🗂️ Lesson Plan</span></a>
-      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
-      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
+<body class="teacher" data-page="plan">
+<a class="skip" href="#main">Skip to the board</a>
+<div class="board">
+  <header class="board-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>teacher's board, Form 2 Mathematics</span></p>
+    <nav class="chalk-nav" aria-label="Teacher's board">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-board"/></svg><span>Overview</span></a>
+      <a href="live-class.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bell"/></svg><span>Live class</span></a>
+      <a href="analytics.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-chart"/></svg><span>Analytics</span></a>
+      <a href="lesson-plan.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-plan"/></svg><span>Lesson plan</span></a>
+      <a href="homework.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-homework"/></svg><span>Homework</span></a>
+      <a href="student-detail.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Mark book</span></a>
+      <a href="../student/index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Student book</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> The class, the names and every score on this board are scripted. Nothing is sent to anyone.</span></p>
+  <main id="main">
+    <h1>Lesson plan</h1>
+    <p class="lede">Distribution to solve for x. 40 minutes.</p>
 
-    <section class="panel">
-      <h2>Preprepared Lesson Plan: Distribution to Solve for x</h2>
-      <div class="lesson-plan-item">
-        <strong>Part 1 (10 min): Review</strong>
-        <p>Recall one-step equation solving and inverse operations.</p>
-      </div>
-      <div class="lesson-plan-item">
-        <strong>Part 2 (15 min): Core Concept</strong>
-        <p>Expand brackets correctly, then isolate x using inverse operations.</p>
-      </div>
-      <div class="lesson-plan-item">
-        <strong>Part 3 (10 min): Guided Practice</strong>
-        <p>Students solve 3(x + 2) = 18, 2(x - 4) = 10, and 4(x + 1) = 28.</p>
-      </div>
-      <div class="lesson-plan-item">
-        <strong>Part 4 (5 min): Exit Check</strong>
-        <p>One quick question to confirm readiness for word-problem lesson.</p>
-      </div>
+    <div class="board-cols two">
+      <section class="pinned" aria-labelledby="pl-h">
+        <h2 id="pl-h">Week 2: multi-step distribution</h2>
+        <p><strong>Objective.</strong> Students solve equations with brackets and isolate x accurately.</p>
+        <ol class="plan-parts">
+          <li><span class="when">Part 1, 10 min</span><strong>Review</strong><span>Recall one-step equations and inverse operations.</span></li>
+          <li><span class="when">Part 2, 15 min</span><strong>Core idea</strong><span>Multiply out the bracket, every term, then solve the two-step equation.</span></li>
+          <li><span class="when">Part 3, 10 min</span><strong>Guided practice</strong><span>Students solve <span class="maths">3(x + 2) = 18</span>, <span class="maths">2(x − 4) = 10</span>, <span class="maths">4(x + 1) = 28</span>.</span></li>
+          <li><span class="when">Part 4, 5 min</span><strong>Exit check</strong><span>One quick question to confirm the class is ready for word problems.</span></li>
+        </ol>
+      </section>
 
-      <div class="session-stage">
-        <strong>Lesson Visibility Status:</strong>
-        <span class="badge" id="plan-status">Closed to students</span>
+      <section class="chalk-box" aria-labelledby="vis-h">
+        <h2 id="vis-h">Visibility</h2>
+        <div class="plan-status">
+        <p><span class="hand">Lesson 3 is</span> <strong class="status-chip" id="plan-status">closed to students</strong></p>
+        <button type="button" class="btn chalk-btn primary" id="plan-toggle" aria-pressed="false">Open to students</button>
+        <p class="small" id="plan-feedback" role="status" aria-live="polite">In this prototype the switch only changes this board.</p>
       </div>
-      <div class="actions">
-        <button class="primary" id="open-plan-btn">Open to Students</button>
-        <a href="analytics.html" class="secondary" style="display:inline-block;text-decoration:none;">View Analytics for This Lesson</a>
-      </div>
-      <p id="open-plan-feedback" class="feedback neutral">Use this to release the lesson on the student path immediately.</p>
-    </section>
+        <p><a class="chalk-link" href="analytics.html">See the analytics for this lesson</a></p>
+      </section>
+    </div>
   </main>
-  <script src="teacher.js"></script>
+  <footer class="board-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+  </footer>
+</div>
+<div class="ledge" aria-hidden="true"><span class="chalk-stick"></span><span class="chalk-stick yellow"></span><span class="chalk-stick pink"></span><span class="duster"></span></div>
+<script type="module" src="../assets/js/teacher.mjs"></script>
 </body>
 </html>

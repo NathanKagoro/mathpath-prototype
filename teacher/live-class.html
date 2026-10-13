@@ -1,55 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Live Class</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live class: MathPath teacher's board</title>
+<meta name="description" content="A scripted run-through of a live class session: students join, the lesson starts and example alerts appear.">
+<meta name="theme-color" content="#25483b">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Live class: MathPath teacher's board">
+<meta property="og:description" content="A scripted run-through of a live class session: students join, the lesson starts and example alerts appear.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/teacher/live-class.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/teacher.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Teacher Dashboard</h1>
-      <p>Live classroom tracking.</p>
-    </header>
-
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏫 Overview</span></a>
-      <a href="live-class.html"><span class="nav-pill active">📡 Live Class</span></a>
-      <a href="analytics.html"><span class="nav-pill">🧠 Analytics</span></a>
-      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
-      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
-      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
+<body class="teacher" data-page="live">
+<a class="skip" href="#main">Skip to the board</a>
+<div class="board">
+  <header class="board-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>teacher's board, Form 2 Mathematics</span></p>
+    <nav class="chalk-nav" aria-label="Teacher's board">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-board"/></svg><span>Overview</span></a>
+      <a href="live-class.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bell"/></svg><span>Live class</span></a>
+      <a href="analytics.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-chart"/></svg><span>Analytics</span></a>
+      <a href="lesson-plan.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-plan"/></svg><span>Lesson plan</span></a>
+      <a href="homework.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-homework"/></svg><span>Homework</span></a>
+      <a href="student-detail.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Mark book</span></a>
+      <a href="../student/index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Student book</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> The class, the names and every score on this board are scripted. Nothing is sent to anyone.</span></p>
+  <main id="main">
+    <h1>Live class</h1>
+    <p class="lede">A scripted run-through of what a live session would look like. No one is really joining.</p>
 
-    <section class="panel">
-      <h2>Live Class Session</h2>
-      <div class="session-stage" id="live-session-stage">
-        Session not started. Click Start Session to begin student check-in.
-      </div>
-      <div class="actions">
-        <button class="primary" id="start-session-btn">Start Session</button>
-        <button class="secondary" id="start-lesson-btn" disabled>Start Lesson</button>
-      </div>
+    <div class="board-cols two">
+      <section class="chalk-box" aria-labelledby="ses-h">
+        <h2 id="ses-h">Session</h2>
+        <p class="stage" id="live-stage" role="status" aria-live="polite">Not started.</p>
+        <div class="btn-row">
+          <button type="button" class="btn chalk-btn primary" id="live-start">Play the scripted session</button>
+          <button type="button" class="btn chalk-btn" id="live-lesson" disabled>Start the lesson</button>
+        </div>
+        <h3>Example alert</h3>
+        <p class="alert" id="live-alert" role="status" aria-live="polite">Alerts appear here once the lesson has started.</p>
+        <button type="button" class="btn chalk-btn" id="live-next" disabled>Show the next example alert</button>
+        <p class="small">The four alerts are written examples of the kind of note the board could raise. They are not detected from anything.</p>
+      </section>
 
-      <h3 style="margin-top:14px;">Student Join Status</h3>
-      <div class="join-list" id="join-list">
-        <div class="join-item waiting">Amina J - Waiting</div>
-        <div class="join-item waiting">John M - Waiting</div>
-        <div class="join-item waiting">Sarah K - Waiting</div>
-        <div class="join-item waiting">Daniel T - Waiting</div>
-        <div class="join-item waiting">Fatima N - Waiting</div>
-      </div>
-
-      <div class="callout" id="live-insight">Start session to begin tracking live class signals.</div>
-    </section>
+      <section class="chalk-box" aria-labelledby="reg-h">
+        <h2 id="reg-h">Register</h2>
+        <ul class="register" id="register">
+          <li><span>Amina J</span><em>waiting</em></li>
+          <li><span>Fatima N</span><em>waiting</em></li>
+          <li><span>Sarah K</span><em>waiting</em></li>
+          <li><span>Daniel T</span><em>waiting</em></li>
+          <li><span>Aisha K</span><em>waiting</em></li>
+          <li><span>John M</span><em>waiting</em></li>
+        </ul>
+      </section>
+    </div>
   </main>
-  <script src="teacher.js"></script>
+  <footer class="board-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+  </footer>
+</div>
+<div class="ledge" aria-hidden="true"><span class="chalk-stick"></span><span class="chalk-stick yellow"></span><span class="chalk-stick pink"></span><span class="duster"></span></div>
+<script type="module" src="../assets/js/teacher.mjs"></script>
 </body>
 </html>

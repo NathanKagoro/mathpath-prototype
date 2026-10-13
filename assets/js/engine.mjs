@@ -177,6 +177,12 @@ export function solveEquation(text) {
   return div(sub(right.k, left.k), a);
 }
 
+/** Both sides of an equation with a value put in for x: what a learner's answer actually gives. */
+export function substitute(text, value) {
+  const { left, right } = parseEquation(text);
+  return { left: add(mul(left.x, value), left.k), right: add(mul(right.x, value), right.k) };
+}
+
 // ---------- questions ----------
 
 export const LEVELS = [

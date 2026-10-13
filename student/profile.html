@@ -1,66 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Profile</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stickers: MathPath</title>
+<meta name="description" content="Seven stickers, each earned by something you actually did: a first right answer, a finished lesson, five in a row.">
+<meta name="theme-color" content="#fdfcf7">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stickers: MathPath">
+<meta property="og:description" content="Seven stickers, each earned by something you actually did: a first right answer, a finished lesson, five in a row.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/student/profile.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/student.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Student</h1>
-      <p>Your profile and achievements.</p>
-    </header>
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏠 Home</span></a>
-      <a href="practice.html"><span class="nav-pill">🎯 Practice</span></a>
-      <a href="results.html"><span class="nav-pill">📊 Results + Progress</span></a>
-      <a href="profile.html"><span class="nav-pill active">👤 Profile</span></a>
+<body class="student" data-page="stickers">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="book">
+  <header class="book-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>algebra exercise book</span></p>
+    <nav class="tabs" aria-label="Student book">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-home"/></svg><span>Home</span></a>
+      <a href="practice.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Practice</span></a>
+      <a href="results.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Results</span></a>
+      <a href="profile.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-sticker"/></svg><span>Stickers</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> Classmates and class scores are scripted. Your answers are marked for real and kept in this browser only.</span></p>
+  <main id="main">
+    <div class="page-title">
+      <h1>Sticker sheet</h1>
+      <p>Each one is earned by something you did. None are given away.</p>
+    </div>
 
-    <section class="panel">
-      <h2>Amina J</h2>
-      <div class="result-grid">
-        <div class="chip"><span>XP Total</span><strong>1,240</strong></div>
-        <div class="chip"><span>Current Streak</span><strong>4 days</strong></div>
-        <div class="chip"><span>Badges</span><strong>6</strong></div>
-      </div>
+    <dl class="totals big">
+      <div><dt>XP</dt><dd id="pro-xp">0</dd></div>
+      <div><dt>Days in a row</dt><dd id="pro-days">0</dd></div>
+      <div><dt>Best run right</dt><dd id="pro-run">0</dd></div>
+    </dl>
 
-      <div class="two-col" style="margin-top:14px;align-items:start;">
-        <div>
-          <h3>Streak Visual</h3>
-          <div class="streak-visual">🔥 4</div>
-          <p class="muted">4-day consistency streak. Keep learning today to maintain it.</p>
-        </div>
-        <div>
-          <h3>Badge Shelf</h3>
-          <div class="achievement-grid">
-            <div class="achievement-card">
-              <span class="achievement-icon">🧩</span>
-              <strong>Bracket Breaker</strong>
-              <span class="muted">Mastered bracket expansion.</span>
-            </div>
-            <div class="achievement-card">
-              <span class="achievement-icon">📅</span>
-              <strong>Consistency Builder</strong>
-              <span class="muted">Practiced 4 days in a row.</span>
-            </div>
-            <div class="achievement-card">
-              <span class="achievement-icon">🧠</span>
-              <strong>Equation Explorer</strong>
-              <span class="muted">Completed 20 solve-for-x questions.</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section aria-labelledby="st-h">
+      <h2 id="st-h" class="sr-only">Stickers</h2>
+      <ul class="sticker-sheet" id="sticker-sheet">
+        <li data-sticker="first"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-tick"/></svg><span><strong>First tick</strong><span class="how">Get one answer right first time.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="lesson1"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-one"/></svg><span><strong>Lesson 1 done</strong><span class="how">Finish all five Introduction questions.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="lesson2"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-two"/></svg><span><strong>Lesson 2 done</strong><span class="how">Finish all five Variables questions.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="lesson3"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-three"/></svg><span><strong>Bracket breaker</strong><span class="how">Finish all five Distribution questions.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="run5"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-star"/></svg><span><strong>Five in a row</strong><span class="how">Five right first time, one after another.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="top"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-ladder"/></svg><span><strong>Top rung</strong><span class="how">Reach level 4 in practice.</span><em class="earned-text">Not yet</em></span></li>
+        <li data-sticker="twenty"><svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-twenty"/></svg><span><strong>Twenty answered</strong><span class="how">Check twenty answers of your own.</span><em class="earned-text">Not yet</em></span></li>
+      </ul>
     </section>
+
+    <section class="worksheet rubout">
+      <h2>Start again</h2>
+      <p>This rubs out your lessons, level, XP and stickers in this browser. It cannot be undone.</p>
+      <button type="button" class="btn" id="reset-open"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-rubber"/></svg><span>Rub out my progress</span></button>
+    </section>
+
+    <dialog id="reset-dialog" aria-labelledby="rd-h">
+      <h2 id="rd-h">Rub out everything?</h2>
+      <p>Your lessons, practice level, XP and stickers will be cleared from this browser.</p>
+      <form method="dialog" class="dialog-actions">
+        <button class="btn" value="cancel">Keep my progress</button>
+        <button class="btn danger" value="confirm">Rub it out</button>
+      </form>
+    </dialog>
   </main>
+  <footer class="book-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+    <a href="../teacher/index.html">Teacher's board</a>
+  </footer>
+</div>
+<script type="module" src="../assets/js/student.mjs"></script>
 </body>
 </html>

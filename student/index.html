@@ -1,104 +1,110 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Student Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your algebra path: MathPath</title>
+<meta name="description" content="Three short algebra lessons on a board-game path, then practice that adapts to how you are doing.">
+<meta name="theme-color" content="#fdfcf7">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your algebra path: MathPath">
+<meta property="og:description" content="Three short algebra lessons on a board-game path, then practice that adapts to how you are doing.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/student/index.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/student.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Student</h1>
-      <p>Your adaptive learning journey.</p>
-    </header>
-
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill active">🏠 Home</span></a>
-      <a href="practice.html"><span class="nav-pill">🎯 Practice</span></a>
-      <a href="results.html"><span class="nav-pill">📊 Results + Progress</span></a>
-      <a href="profile.html"><span class="nav-pill">👤 Profile</span></a>
+<body class="student" data-page="home">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="book">
+  <header class="book-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>algebra exercise book</span></p>
+    <nav class="tabs" aria-label="Student book">
+      <a href="index.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-home"/></svg><span>Home</span></a>
+      <a href="practice.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Practice</span></a>
+      <a href="results.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Results</span></a>
+      <a href="profile.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-sticker"/></svg><span>Stickers</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> Classmates and class scores are scripted. Your answers are marked for real and kept in this browser only.</span></p>
+  <main id="main">
+    <div class="page-title">
+      <h1>Your algebra path</h1>
+      <p>Three lessons of five questions, then as much practice as you like. Start anywhere.</p>
+    </div>
 
-    <section class="home-grid">
-      <div class="panel hero">
-        <div>
-          <h2>Good afternoon, Amina</h2>
-          <p>Continue your Algebra path to keep your streak alive.</p>
-          <div class="homework-banner">📘 Homework assigned today: Distribution Reinforcement (Due tomorrow)</div>
-          <div class="actions">
-            <a class="primary" href="lesson-distribution.html" style="display:inline-block;text-decoration:none;">Do Homework</a>
-          </div>
-        </div>
-        <div class="streak-xp">
-          <div class="stat-big streak">
-            <span class="label">Streak</span>
-            <strong>🔥 4 days</strong>
-          </div>
-          <div class="stat-big xp">
-            <span class="label">XP</span>
-            <strong>1,240</strong>
-          </div>
-        </div>
-      </div>
-
-      <aside class="panel leaderboard">
-        <h3>Class Leaderboard</h3>
-        <ol>
-          <li class="rank-row top"><span class="rank-pos">1</span><span>Amina J</span><span class="rank-xp">1,240 XP</span></li>
-          <li class="rank-row top"><span class="rank-pos">2</span><span>Fatima N</span><span class="rank-xp">1,180 XP</span></li>
-          <li class="rank-row top"><span class="rank-pos">3</span><span>Sarah K</span><span class="rank-xp">1,050 XP</span></li>
-          <li class="rank-row"><span class="rank-pos">4</span><span>Daniel T</span><span class="rank-xp">990 XP</span></li>
-          <li class="rank-row"><span class="rank-pos">5</span><span>John M</span><span class="rank-xp">915 XP</span></li>
+    <section class="path-section" aria-labelledby="path-h">
+      <h2 id="path-h" class="sr-only">Lessons</h2>
+      <div class="path-wrap">
+        <svg class="path-line wide" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true"><path class="track-edge" d="M0 78C62.5 78 62.5 0 125 0C250 0 250 100 375 100C500 100 500 0 625 0C750 0 750 100 875 100C937.5 100 937.5 30 1000 30"/><path class="track-fill" d="M0 78C62.5 78 62.5 0 125 0C250 0 250 100 375 100C500 100 500 0 625 0C750 0 750 100 875 100C937.5 100 937.5 30 1000 30"/><path class="track-squares" d="M0 78C62.5 78 62.5 0 125 0C250 0 250 100 375 100C500 100 500 0 625 0C750 0 750 100 875 100C937.5 100 937.5 30 1000 30"/></svg>
+        <svg class="path-line tall" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true"><path class="track-edge" d="M40 0C40 62.5 0 62.5 0 125C0 250 100 250 100 375C100 500 0 500 0 625C0 750 100 750 100 875C100 937.5 50 937.5 50 1000"/><path class="track-fill" d="M40 0C40 62.5 0 62.5 0 125C0 250 100 250 100 375C100 500 0 500 0 625C0 750 100 750 100 875C100 937.5 50 937.5 50 1000"/><path class="track-squares" d="M40 0C40 62.5 0 62.5 0 125C0 250 100 250 100 375C100 500 0 500 0 625C0 750 100 750 100 875C100 937.5 50 937.5 50 1000"/></svg>
+        <ol class="path">
+          <li class="stop" data-lesson="1">
+            <a href="lesson-introduction.html">
+              <span class="stop-disc"><span class="stop-num">1</span></span>
+              <span class="stop-label"><strong>Introduction</strong><span>One-step equations: undo one operation.</span><em class="stop-state">Not started</em></span>
+            </a>
+          </li>
+          <li class="stop" data-lesson="2">
+            <a href="lesson-variables.html">
+              <span class="stop-disc"><span class="stop-num">2</span></span>
+              <span class="stop-label"><strong>Variables</strong><span>Two-step equations: clear the number, then the multiplier.</span><em class="stop-state">Not started</em></span>
+            </a>
+          </li>
+          <li class="stop" data-lesson="3">
+            <a href="lesson-distribution.html">
+              <span class="stop-disc"><span class="stop-num">3</span></span>
+              <span class="stop-label"><strong>Distribution</strong><span>Equations with brackets: multiply out, then solve.</span><em class="stop-state">Not started</em></span>
+            </a>
+          </li>
+          <li class="stop locked">
+            <span class="stop-inner">
+              <span class="stop-disc"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-lock"/></svg></span>
+              <span class="stop-label"><strong>Word problems</strong><span>Planned as lesson 4. Not built in this prototype.</span></span>
+            </span>
+          </li>
         </ol>
-        <p class="muted" style="margin-top:10px;">You are currently ranked #1 in your class.</p>
-      </aside>
-    </section>
-
-    <section class="panel">
-      <h2>Algebra Journey</h2>
-      <p class="muted">Tap any unlocked lesson node. Path follows a zigzag journey across the page.</p>
-
-      <div class="duo-tree">
-        <a class="tree-node done" href="lesson-introduction.html">
-          <span class="orb">✓</span>
-          <span class="tree-card">
-            <strong>Lesson 1: Introduction</strong>
-            <p>Solve basic one-step equations for x.</p>
-          </span>
-        </a>
-
-        <a class="tree-node done" href="lesson-variables.html">
-          <span class="orb">✓</span>
-          <span class="tree-card">
-            <strong>Lesson 2: Variables</strong>
-            <p>Use substitution and isolate x in simple expressions.</p>
-          </span>
-        </a>
-
-        <a class="tree-node current" href="lesson-distribution.html">
-          <span class="orb">▶</span>
-          <span class="tree-card">
-            <strong>Lesson 3: Distribution</strong>
-            <p>Current lesson. Solve equations involving brackets.</p>
-          </span>
-        </a>
-
-        <span class="tree-node locked">
-          <span class="orb">🔒</span>
-          <span class="tree-card">
-            <strong>Lesson 4: Word Problems</strong>
-            <p>Unlock after Lesson 3 mastery reaches 70%.</p>
-          </span>
-        </span>
       </div>
     </section>
+
+    <div class="home-row">
+      <section class="worksheet homework" aria-labelledby="hw-h">
+        <h2 id="hw-h">Homework</h2>
+        <p>Set for Form 2: <strong>Lesson 3, Distribution</strong>. Five equations with brackets.</p>
+        <p class="pen" id="hw-state">Not started yet.</p>
+        <a class="btn primary" href="lesson-distribution.html">Do the homework</a>
+      </section>
+
+      <section class="worksheet" aria-labelledby="pr-h">
+        <h2 id="pr-h">Extra practice</h2>
+        <p>Fresh questions every time. 3 right in a row moves you up a level, 2 misses in a row moves you down.</p>
+        <p class="pen" id="teaser-level">You are on level 1 of 4: One step.</p>
+        <a class="btn" href="practice.html">Practise</a>
+      </section>
+
+      <aside class="index-card" aria-labelledby="lb-h">
+        <h2 id="lb-h">Class table</h2>
+        <ol id="leaderboard"><li><span>Amina J</span><span class="xp">240 XP</span></li><li><span>Fatima N</span><span class="xp">180 XP</span></li><li><span>Sarah K</span><span class="xp">150 XP</span></li><li><span>Daniel T</span><span class="xp">90 XP</span></li><li><span>Aisha K</span><span class="xp">70 XP</span></li><li><span>John M</span><span class="xp">60 XP</span></li><li class="you"><span>You</span><span class="xp">0 XP</span></li></ol>
+        <dl class="totals" id="home-totals">
+          <div><dt>Days in a row</dt><dd id="stat-days">0</dd></div>
+          <div><dt>Stickers</dt><dd id="stat-stickers">0 of 7</dd></div>
+        </dl>
+      </aside>
+    </div>
   </main>
+  <footer class="book-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+    <a href="../teacher/index.html">Teacher's board</a>
+  </footer>
+</div>
+<script type="module" src="../assets/js/student.mjs"></script>
 </body>
 </html>

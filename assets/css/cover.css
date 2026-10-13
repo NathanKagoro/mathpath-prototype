@@ -1,0 +1,123 @@
+/* Front cover: an exercise book and a teacher's planner lying on a school desk. */
+body.cover { background: #b58a5a; min-height: 100vh; isolation: isolate; position: relative; overflow-x: hidden; }
+body.cover::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    repeating-linear-gradient(91deg, rgba(74, 44, 14, 0.09) 0 2px, transparent 2px 11px),
+    repeating-linear-gradient(89deg, rgba(255, 236, 200, 0.07) 0 3px, transparent 3px 23px),
+    linear-gradient(180deg, rgba(255, 240, 210, 0.12), rgba(60, 30, 5, 0.14));
+}
+
+.desk {
+  max-width: 1180px; margin: 0 auto; padding: 20px 16px 28px;
+  display: grid; gap: 22px;
+  grid-template-areas: "slip" "covers" "note" "foot";
+}
+
+/* Torn strip of graph paper carrying the title. */
+.slip {
+  grid-area: slip; position: relative; isolation: isolate;
+  background: var(--paper); padding: 18px 18px 34px 34px;
+  transform: rotate(-0.8deg);
+  box-shadow: 0 3px 0 rgba(60, 35, 10, 0.25);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9px), 96% 100%, 91% calc(100% - 8px), 85% 100%, 79% calc(100% - 7px), 72% 100%, 66% calc(100% - 9px), 59% 100%, 52% calc(100% - 6px), 45% 100%, 38% calc(100% - 9px), 31% 100%, 24% calc(100% - 7px), 17% 100%, 10% calc(100% - 9px), 4% 100%, 0 calc(100% - 6px));
+}
+.slip::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, transparent 21px, var(--margin-red) 21px 23px, transparent 23px),
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 19px 19px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 19px 19px;
+}
+.slip h1 { font-size: clamp(3.2rem, 15vw, 4.7rem); color: var(--biro); letter-spacing: -0.01em; line-height: 0.95; }
+.slip p { margin-top: 10px; max-width: 34em; }
+
+.covers { grid-area: covers; display: grid; gap: 26px; }
+
+.exbook, .planner {
+  position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 12px;
+  min-height: 330px; padding: 20px 18px 74px 44px;
+  text-decoration: none; border-radius: 3px 10px 10px 3px;
+  box-shadow: 2px 3px 0 rgba(50, 28, 6, 0.35), 5px 7px 0 rgba(50, 28, 6, 0.16);
+  transition: transform 0.18s ease-out;
+}
+.exbook { background: #ecc878; color: #2b2d33; transform: rotate(-1.2deg); }
+.exbook::before { /* cloth tape on the spine */
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 26px; z-index: -1;
+  border-radius: 3px 0 0 3px;
+  background: #1f3566 repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 3px);
+}
+.exbook-print { display: grid; gap: 2px; padding-right: 76px; line-height: 1.15; }
+.exbook-print b { font-size: 1.55rem; letter-spacing: 0.01em; }
+.exbook-print span { color: #54431a; }
+.exbook-label {
+  display: block; background: #fffefb; border: 2px solid #2b2d33; border-radius: 4px; padding: 4px 12px 8px; max-width: 330px;
+}
+.exbook-label .row { display: flex; align-items: baseline; gap: 10px; border-bottom: 1.5px solid #9db9d0; min-height: 40px; padding-top: 6px; }
+.exbook-label b { font-size: 0.8rem; font-weight: 400; color: var(--graphite-soft); width: 4.2em; flex: none; }
+.exbook-label i { font: 700 1.3rem/1.1 var(--hand); color: var(--biro); }
+.exbook-tables { display: none; color: #54431a; font-size: 0.75rem; line-height: 1.4; gap: 16px; margin-top: auto; white-space: nowrap; }
+.exbook-sticker { position: absolute; right: 10px; top: 10px; width: 76px; height: 76px; transform: rotate(12deg); }
+
+.planner { background: var(--board); color: var(--chalk); transform: rotate(1deg); padding-left: 26px; padding-right: 54px; }
+.planner::before { /* elastic strap */
+  content: ""; position: absolute; right: 26px; top: 0; bottom: 0; width: 13px; z-index: -1; background: #14261f;
+}
+.planner::after { /* stitched edge */
+  content: ""; position: absolute; inset: 7px; z-index: -1; border: 1.5px dashed rgba(245, 242, 230, 0.28); border-radius: 2px 7px 7px 2px; pointer-events: none;
+}
+.planner-title { font: 700 2.3rem/1 var(--hand); color: var(--chalk); }
+.planner-sub { color: var(--chalk-soft); max-width: 17em; }
+.planner-grid { width: min(100%, 250px); height: auto; margin-top: 2px; }
+
+.flag {
+  position: absolute; right: -6px; bottom: 16px;
+  font: 700 1.25rem/1.1 var(--hand); color: #2b2d33; background: var(--highlighter);
+  padding: 14px 20px 12px 18px; border-radius: 2px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%);
+  padding-right: 30px;
+  box-shadow: none;
+}
+.planner .flag { background: var(--chalk-yellow); }
+.flag-inline { position: static; display: inline-block; text-decoration: none; margin-top: 14px; }
+.exbook:hover, .exbook:focus-visible { transform: rotate(0deg) translateY(-5px); }
+.planner:hover, .planner:focus-visible { transform: rotate(0deg) translateY(-5px); }
+.exbook:focus-visible, .planner:focus-visible { outline: 4px solid #fffefb; outline-offset: 4px; }
+body.cover :focus-visible { outline-color: #fffefb; }
+body.cover .slip :focus-visible { outline-color: var(--biro); }
+
+.sticky-note {
+  grid-area: note; background: var(--sticky); color: #2b2d33; padding: 16px 18px 20px; max-width: 420px;
+  transform: rotate(1.2deg); box-shadow: 1px 4px 0 rgba(60, 35, 10, 0.28);
+  border-bottom-right-radius: 26px 8px;
+}
+.sticky-note h2 { font-size: 1.35rem; margin-bottom: 4px; }
+
+.desk-pencil { display: none; }
+.desk-foot { grid-area: foot; }
+.desk-foot a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px;
+  background: #f3e7c3; color: #2b2d33; text-decoration: none; font-weight: 700;
+  transform: rotate(-1deg); box-shadow: 0 2px 0 rgba(60, 35, 10, 0.25);
+}
+.desk-foot a:hover { text-decoration: underline; }
+
+@media (min-width: 560px) {
+  .covers { grid-template-columns: 1fr 1fr; }
+  .exbook, .planner { min-height: 440px; }
+  .exbook-tables { display: flex; }
+}
+@media (min-width: 1000px) {
+  .desk {
+    grid-template-columns: minmax(320px, 430px) 1fr; column-gap: 46px; padding: 34px 32px 30px; align-items: start;
+    grid-template-areas: "slip covers" "note covers" "foot pencil";
+  }
+  .covers { gap: 40px; padding-top: 8px; }
+  .exbook, .planner { min-height: 540px; padding-top: 30px; }
+  .exbook { padding-left: 54px; }
+  .exbook-print b { font-size: 1.9rem; }
+  .planner-title { font-size: 2.9rem; }
+  .planner-grid { width: 270px; margin-top: 14px; }
+  .sticky-note { margin-left: 26px; }
+  .desk-pencil { display: block; grid-area: pencil; width: 420px; justify-self: center; transform: rotate(-3deg); margin-top: 6px; filter: drop-shadow(2px 4px 0 rgba(50, 28, 6, 0.3)); }
+}

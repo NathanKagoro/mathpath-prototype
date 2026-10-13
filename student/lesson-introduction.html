@@ -1,54 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Lesson Introduction</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 1, Introduction: MathPath</title>
+<meta name="description" content="One-step equations: undo one operation. A worked example, then five questions marked as you go.">
+<meta name="theme-color" content="#fdfcf7">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lesson 1, Introduction: MathPath">
+<meta property="og:description" content="One-step equations: undo one operation. A worked example, then five questions marked as you go.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/student/lesson-introduction.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/student.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
+<body class="student" data-page="lesson" data-lesson="1">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="book">
+  <header class="book-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>algebra exercise book</span></p>
+    <nav class="tabs" aria-label="Student book">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-home"/></svg><span>Home</span></a>
+      <a href="practice.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Practice</span></a>
+      <a href="results.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Results</span></a>
+      <a href="profile.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-sticker"/></svg><span>Stickers</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
+    </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> Classmates and class scores are scripted. Your answers are marked for real and kept in this browser only.</span></p>
+  <main id="main">
+    <div class="page-title">
+      <p class="crumb"><a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-back"/></svg><span>Back to the path</span></a></p>
+      <h1>Lesson 1: Introduction</h1>
+      <p>One-step equations: undo one operation.</p>
+    </div>
 
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Lesson: Introduction</h1>
-      <p>Starter equations to build confidence.</p>
-      <a href="index.html" class="secondary" style="display:inline-block;text-decoration:none;">Back to Lesson Path</a>
-    </header>
+    <div class="lesson-progress">
+      <span class="hand">Lesson progress</span>
+      <span class="boxes" id="lp-boxes" aria-hidden="true"><span class="box"></span><span class="box"></span><span class="box"></span><span class="box"></span><span class="box"></span></span>
+      <strong id="lp-text">0 of 5 done, 0%</strong>
+    </div>
 
-    <section class="panel">
-      <h2>Warm-Up</h2>
-      <p class="math">x + 4 = 11</p>
-      <p>Solve for x. If x + 4 = 11, then x = 7.</p>
-      <div class="actions">
-        <button class="secondary" id="generate-intro-context">Generate Context</button>
+    <div class="lesson-cols">
+    <section class="quiz" aria-labelledby="quiz-h">
+      <div class="quiz-head">
+        <h2 id="quiz-h">Solve for x</h2>
+        <p class="q-count" id="q-count"></p>
       </div>
-      <p class="hint hidden" id="intro-context">Context: A notebook costs x shillings plus a 4-shilling cover fee, total cost is 11.</p>
-      <div class="callout">You can now continue to Variables and Distribution lessons.</div>
+      <p class="question maths" id="q-text">x + 5 = 12</p>
+      <form id="answer-form" class="answer" action="#" novalidate>
+        <label for="answer" class="maths">x =</label>
+        <input id="answer" name="x" type="text" inputmode="decimal" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" aria-describedby="answer-help">
+        <button type="button" class="key" data-key="sign" aria-label="Switch between negative and positive">±</button>
+        <button type="button" class="key" data-key="/" aria-label="Fraction bar">/</button>
+        <button type="submit" class="btn primary" id="check">Check answer</button>
+        <p id="answer-help" class="small">A whole number, a fraction such as 16/3, or a decimal to 2 places. Press Enter to check.</p>
+      </form>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      <div class="next-row">
+        <button type="button" class="btn primary" id="next" hidden>Next question</button>
+        <button type="button" class="btn" id="reveal" hidden>Show the answer and move on</button>
+      </div>
+      <div class="tools">
+        <button type="button" class="btn tool" id="t-word" aria-expanded="false" aria-controls="p-word"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-speech"/></svg><span>Show it as a word problem</span></button>
+        <button type="button" class="btn tool" id="t-hint" aria-expanded="false" aria-controls="p-hint"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bulb"/></svg><span>Show a hint</span></button>
+        <button type="button" class="btn tool" id="t-marked" aria-expanded="false" aria-controls="p-marked"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pen"/></svg><span>See an example of marked working</span></button>
+      </div>
+      <div id="p-word" class="note speech" hidden></div>
+      <div id="p-hint" class="note sticky" hidden></div>
+      <div id="p-marked" class="scrap" hidden></div>
+      <noscript><p class="note sticky">Marking needs JavaScript. The worked example above still reads without it.</p></noscript>
+    </section>
+
+      <section class="worksheet example" aria-labelledby="ex-h">
+        <h2 id="ex-h">Worked example</h2>
+        <ol class="working good"><li><span class="maths">x + 4 = 11</span></li><li><span class="maths">x = 7</span></li></ol>
+        <p>Undo the + 4: subtract 4 from both sides.</p>
+      </section>
+    </div>
+
+    <section class="worksheet done-card" id="lesson-done" hidden tabindex="-1">
+      <svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/icons.svg#st-one"/></svg>
+      <div>
+        <h2>Lesson 1 complete</h2>
+        <p>5 of 5 done, 100%. <span id="done-first"></span></p>
+        <p class="done-links"><a class="btn primary" href="lesson-variables.html">Go to lesson 2</a> <a class="btn" href="results.html">See your results</a> <button type="button" class="btn" id="lesson-again">Do this lesson again</button></p>
+      </div>
     </section>
   </main>
-
-  <script>
-    const introContexts = [
-      'Context: A notebook costs x shillings plus a 4-shilling cover fee, total cost is 11.',
-      'Context: A bus ride costs x shillings and a fixed 4-shilling terminal fee, total 11.',
-      'Context: A fruit pack has x oranges and 4 bonus oranges, making 11 in total.'
-    ];
-    let introIndex = 0;
-    const introButton = document.getElementById('generate-intro-context');
-    const introText = document.getElementById('intro-context');
-    introButton.addEventListener('click', () => {
-      if (introText.classList.contains('hidden')) {
-        introText.classList.remove('hidden');
-        introButton.textContent = '';
-        introText.textContent = introContexts[introIndex];
-        return;
-      }
-    });
-  </script>
+  <footer class="book-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+    <a href="../teacher/index.html">Teacher's board</a>
+  </footer>
+</div>
+<script type="module" src="../assets/js/student.mjs"></script>
 </body>
 </html>

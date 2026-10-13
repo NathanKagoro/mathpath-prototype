@@ -1,97 +1,98 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Analytics</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics: MathPath teacher's board</title>
+<meta name="description" content="Scripted class progress against expected progress, and the commonest algebra slip with its working computed line by line.">
+<meta name="theme-color" content="#25483b">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Analytics: MathPath teacher's board">
+<meta property="og:description" content="Scripted class progress against expected progress, and the commonest algebra slip with its working computed line by line.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/teacher/analytics.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/teacher.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Teacher Dashboard</h1>
-      <p>Misconception analysis and propagation.</p>
-    </header>
-
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏫 Overview</span></a>
-      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
-      <a href="analytics.html"><span class="nav-pill active">🧠 Analytics</span></a>
-      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
-      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
-      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
+<body class="teacher" data-page="analytics">
+<a class="skip" href="#main">Skip to the board</a>
+<div class="board">
+  <header class="board-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>teacher's board, Form 2 Mathematics</span></p>
+    <nav class="chalk-nav" aria-label="Teacher's board">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-board"/></svg><span>Overview</span></a>
+      <a href="live-class.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bell"/></svg><span>Live class</span></a>
+      <a href="analytics.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-chart"/></svg><span>Analytics</span></a>
+      <a href="lesson-plan.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-plan"/></svg><span>Lesson plan</span></a>
+      <a href="homework.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-homework"/></svg><span>Homework</span></a>
+      <a href="student-detail.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Mark book</span></a>
+      <a href="../student/index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Student book</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> The class, the names and every score on this board are scripted. Nothing is sent to anyone.</span></p>
+  <main id="main">
+    <h1>Analytics</h1>
+    <p class="lede">Where the class is against the plan, and the slip behind most wrong answers.</p>
 
-    <section class="panel">
-      <h2>Student Progress vs Expected Progress</h2>
-      <div class="analytics-chart">
-        <svg viewBox="0 0 620 260" width="100%" height="260" aria-label="Progress comparison chart">
-          <line x1="45" y1="20" x2="45" y2="225" stroke="#b8c8f4" stroke-width="2"/>
-          <line x1="45" y1="225" x2="590" y2="225" stroke="#b8c8f4" stroke-width="2"/>
-
-          <line x1="45" y1="185" x2="590" y2="185" stroke="#e5edff" stroke-width="1"/>
-          <line x1="45" y1="145" x2="590" y2="145" stroke="#e5edff" stroke-width="1"/>
-          <line x1="45" y1="105" x2="590" y2="105" stroke="#e5edff" stroke-width="1"/>
-          <line x1="45" y1="65" x2="590" y2="65" stroke="#e5edff" stroke-width="1"/>
-
-          <polyline fill="none" stroke="#6c4cf1" stroke-width="4" points="45,200 136,176 227,150 318,124 409,98 500,76 590,58"/>
-          <polyline fill="none" stroke="#3b82f6" stroke-width="4" points="45,206 136,192 227,168 318,148 409,132 500,122 590,114"/>
-
-          <text x="35" y="232" font-size="12" fill="#5a6798">0%</text>
-          <text x="29" y="190" font-size="12" fill="#5a6798">20%</text>
-          <text x="29" y="150" font-size="12" fill="#5a6798">40%</text>
-          <text x="29" y="110" font-size="12" fill="#5a6798">60%</text>
-          <text x="29" y="70" font-size="12" fill="#5a6798">80%</text>
-
-          <text x="55" y="246" font-size="12" fill="#5a6798">Week 1</text>
-          <text x="140" y="246" font-size="12" fill="#5a6798">Week 2</text>
-          <text x="230" y="246" font-size="12" fill="#5a6798">Week 3</text>
-          <text x="320" y="246" font-size="12" fill="#5a6798">Week 4</text>
-          <text x="410" y="246" font-size="12" fill="#5a6798">Week 5</text>
-          <text x="500" y="246" font-size="12" fill="#5a6798">Week 6</text>
-          <text x="560" y="246" font-size="12" fill="#5a6798">Now</text>
+    <div class="board-cols two">
+      <section class="chalk-box" aria-labelledby="ch-h">
+        <h2 id="ch-h">Progress against the plan</h2>
+        <svg class="chalk-chart" viewBox="0 0 400 250" role="img" aria-labelledby="chart-t chart-d">
+          <title id="chart-t">Class progress against expected progress</title>
+          <desc id="chart-d">Expected progress rises from 10% to 80% over seven weeks. The class rises from 8% to 53%, falling behind from week 4.</desc>
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="#d3ddd6" stroke-width="1" opacity=".45" d="M46.3 165.5L200.4 164.3L371.9 164.8M45.3 125.7L200.5 125.3L371.7 125.4M46.1 84.9L200.4 84.3L372.3 85.4M46.6 44.7L200.6 45.5L372.4 45.5"/>
+            <path stroke="#f5f2e6" stroke-width="2.5" d="M46.9 30.3L46.3 204.1L375.3 204.4"/>
+            <path stroke="#ffe27a" stroke-width="3.5" stroke-dasharray="2 8" d="M46.5 184.5L97.5 161.4L150.4 136.2L202.8 109.8L254.9 84.6L305.7 62.7L357 45.8"/>
+            <path stroke="#ffbcc7" stroke-width="4" d="M44.8 188.8L96.9 174.9L150.9 152.1L202.4 131.8L254.1 114.7L305.2 106.1L358.5 100.1"/>
+          </g>
+          <g font-family="Andika, Segoe UI, sans-serif" font-size="12" fill="#f5f2e6">
+            <text x="38" y="209" text-anchor="end">0%</text><text x="38" y="169" text-anchor="end">20%</text><text x="38" y="129" text-anchor="end">40%</text><text x="38" y="89" text-anchor="end">60%</text><text x="38" y="49" text-anchor="end">80%</text>
+            <text x="46" y="224" text-anchor="middle">Wk 1</text><text x="98" y="224" text-anchor="middle">Wk 2</text><text x="150" y="224" text-anchor="middle">Wk 3</text><text x="202" y="224" text-anchor="middle">Wk 4</text><text x="254" y="224" text-anchor="middle">Wk 5</text><text x="306" y="224" text-anchor="middle">Wk 6</text><text x="358" y="224" text-anchor="middle">Now</text>
+            <text x="352" y="35" text-anchor="end" fill="#ffe27a" font-weight="700">Expected 80%</text>
+            <text x="356" y="121" text-anchor="end" fill="#ffbcc7" font-weight="700">Class 53%</text>
+          </g>
         </svg>
-        <div class="chart-legend">
-          <span class="legend-key"><span class="legend-line expected"></span>Expected progress</span>
-          <span class="legend-key"><span class="legend-line actual"></span>Current class progress</span>
-        </div>
-      </div>
+        <p class="small">Scripted figures: share of the term's objectives met, by week.</p>
+      </section>
 
-      <h3 style="margin-top:14px;">Priority Help Areas</h3>
-      <div class="support-grid">
-        <div class="support-card">
-          <strong>1. Distribution Accuracy</strong>
-          <p class="muted">Students miss multiplying every term inside brackets.</p>
-        </div>
-        <div class="support-card">
-          <strong>2. Sign Handling</strong>
-          <p class="muted">Negative signs are frequently moved incorrectly across the equals sign.</p>
-        </div>
-        <div class="support-card">
-          <strong>3. Equation Isolation</strong>
-          <p class="muted">Some learners stop early and do not finish solving for x.</p>
-        </div>
-        <div class="support-card">
-          <strong>4. Arithmetic Fluency</strong>
-          <p class="muted">Final simplification arithmetic is slowing mastery completion.</p>
-        </div>
-      </div>
-    </section>
+      <section class="chalk-box" aria-labelledby="mis-h">
+        <h2 id="mis-h">Commonest slip</h2>
+        <p><strong>Forgot to multiply out the whole bracket.</strong> 7 of the 30 homework answers, 23%.</p>
+        <p>On <span class="maths">2(x + 3) = 21</span> it looks like this:</p>
+        <ol class="chalk-working">
+          <li><span class="maths">2(x + 3) = 21</span></li>
+          <li class="bad"><span class="maths">2x + 3 = 21</span> <span class="chalk-note">should be <span class="maths">2x + 6 = 21</span></span></li>
+          <li><span class="maths">2x = 18</span></li>
+          <li><span class="maths">x = 9</span></li>
+        </ol>
+        <p>The right answer is <span class="maths">x = 15/2 = 7.5</span>. The slip gives <span class="maths">x = 9</span>.</p>
+      </section>
+    </div>
 
-    <section class="panel">
-      <h2>Top Misconception</h2>
-      <p>Failure to distribute before solving for x.</p>
-      <p class="math">2(x + 3) = 21</p>
-      <p class="math">Incorrect: 2x + 3 = 21</p>
-      <p class="math">Correct step: 2x + 6 = 21, then solve x = 7.5</p>
-      <div class="callout">41% of students are affected. Suggested intervention: fare-pricing and shopping bundle examples.</div>
+    <section class="chalk-box" aria-labelledby="pri-h">
+      <h2 id="pri-h">Slips by share of answers</h2>
+      <ul class="slip-bars">
+        <li><span>Forgot to multiply out the whole bracket</span><div class="chalk-bar" role="img" aria-label="Forgot to multiply out the whole bracket: 23%"><span style="width:23%"></span></div><strong>23%</strong></li>
+        <li><span>Sign slip</span><div class="chalk-bar" role="img" aria-label="Sign slip: 17%"><span style="width:17%"></span></div><strong>17%</strong></li>
+        <li><span>Stopped a step early</span><div class="chalk-bar" role="img" aria-label="Stopped a step early: 7%"><span style="width:7%"></span></div><strong>7%</strong></li>
+      </ul>
+      <p class="small">Counted from the mark book: each wrong answer there is the value that slip produces.</p>
     </section>
   </main>
+  <footer class="board-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+  </footer>
+</div>
+<div class="ledge" aria-hidden="true"><span class="chalk-stick"></span><span class="chalk-stick yellow"></span><span class="chalk-stick pink"></span><span class="duster"></span></div>
+<script type="module" src="../assets/js/teacher.mjs"></script>
 </body>
 </html>

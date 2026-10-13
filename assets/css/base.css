@@ -1,12 +1,12 @@
 /* Shared by the cover, the student book and the teacher's board. */
 @font-face { font-family: "Kalam"; src: url("../fonts/kalam-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Kalam"; src: url("../fonts/kalam-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Andika"; src: url("../fonts/andika-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Andika"; src: url("../fonts/andika-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
 :root {
   --hand: "Kalam", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
-  --plain: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --plain: "Andika", "Segoe UI", system-ui, -apple-system, sans-serif;
   --paper: #fdfcf7;
   --grid: #cfe1ee;
   --margin-red: #e0424e;
@@ -32,7 +32,7 @@
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0;
-  font: 400 1.0625rem/1.5 var(--plain);
+  font: 400 1rem/1.5 var(--plain);
   font-variant-numeric: tabular-nums lining-nums;
   color: var(--graphite);
 }

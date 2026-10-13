@@ -1,96 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Teacher Overview</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview: MathPath teacher's board</title>
+<meta name="description" content="A scripted Form 2 class on a chalkboard: how many answers were right, which slip is commonest and who needs a word.">
+<meta name="theme-color" content="#25483b">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Overview: MathPath teacher's board">
+<meta property="og:description" content="A scripted Form 2 class on a chalkboard: how many answers were right, which slip is commonest and who needs a word.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/teacher/index.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/teacher.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Teacher Dashboard</h1>
-      <p>Class visibility and lesson control.</p>
-    </header>
-
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill active">🏫 Overview</span></a>
-      <a href="live-class.html"><span class="nav-pill">📡 Live Class</span></a>
-      <a href="analytics.html"><span class="nav-pill">🧠 Analytics</span></a>
-      <a href="lesson-plan.html"><span class="nav-pill">🗂️ Lesson Plan</span></a>
-      <a href="homework.html"><span class="nav-pill">📘 Homework</span></a>
-      <a href="student-detail.html"><span class="nav-pill">👥 Student Detail</span></a>
-      <a href="../student/index.html"><span class="nav-pill">🎓 Student View</span></a>
+<body class="teacher" data-page="overview">
+<a class="skip" href="#main">Skip to the board</a>
+<div class="board">
+  <header class="board-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>teacher's board, Form 2 Mathematics</span></p>
+    <nav class="chalk-nav" aria-label="Teacher's board">
+      <a href="index.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-board"/></svg><span>Overview</span></a>
+      <a href="live-class.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bell"/></svg><span>Live class</span></a>
+      <a href="analytics.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-chart"/></svg><span>Analytics</span></a>
+      <a href="lesson-plan.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-plan"/></svg><span>Lesson plan</span></a>
+      <a href="homework.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-homework"/></svg><span>Homework</span></a>
+      <a href="student-detail.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Mark book</span></a>
+      <a href="../student/index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Student book</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> The class, the names and every score on this board are scripted. Nothing is sent to anyone.</span></p>
+  <main id="main">
+    <h1>Form 2 Mathematics</h1>
+    <p class="lede">This week: distribution: equations with brackets.</p>
 
-    <section class="panel">
-      <h2>Select Class</h2>
-      <p class="muted">Choose a class to manage. Only Year 9 currently has live demo data.</p>
-      <div class="class-grid">
-        <div class="class-tile">
-          <strong>Year 7 Mathematics</strong>
-        </div>
-        <div class="class-tile">
-          <strong>Year 8 Mathematics</strong>
-        </div>
-        <div class="class-tile active">
-          <strong>Year 9 Mathematics</strong>
-          <span class="badge open">Active Class</span>
-        </div>
-        <div class="class-tile">
-          <strong>Year 10 Mathematics</strong>
-        </div>
-      </div>
-    </section>
+    <div class="board-cols">
+      <section class="chalk-box" aria-labelledby="und-h">
+        <h2 id="und-h">Lesson 3 homework</h2>
+        <p class="big-figure"><strong>16 of 30</strong> answers right, 53%</p>
+        <div class="chalk-bar" role="img" aria-label="Answers right: 53%"><span style="width:53%"></span></div>
+        <h3>Commonest slips</h3>
+        <ul class="chalk-list">
+          <li>Forgot to multiply out the whole bracket: <strong>7</strong> of 30 answers, 23%</li>
+          <li>Sign slip: <strong>5</strong> of 30 answers, 17%</li>
+          <li>Stopped a step early: <strong>2</strong> of 30 answers, 7%</li>
+        </ul>
+      </section>
 
-    <section class="panel">
-      <h2>Class: Year 9 Mathematics</h2>
-      <p class="muted">Current topic: Distribution and solving for x</p>
-      <div class="progress-wrap">
-        <span>Class Understanding</span>
-        <div class="bar"><div class="fill" style="width:62%"></div></div>
-        <span>62%</span>
-      </div>
-      <div class="two-col" style="margin-top:14px;">
-        <div>
-          <h3>Top Struggles</h3>
-          <ul>
-            <li>Distribution errors: 41%</li>
-            <li>Sign confusion: 18%</li>
-            <li>Arithmetic slips: 12%</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Students Needing Attention</h3>
-          <ul>
-            <li>John M</li>
-            <li>Aisha K</li>
-            <li>Daniel T</li>
-          </ul>
-        </div>
-      </div>
-      <div class="callout">Recommendation: reteach distribution using transport fare examples, then assign reinforcement.</div>
-    </section>
+      <section class="chalk-box" aria-labelledby="att-h">
+        <h2 id="att-h">Worth a word</h2>
+        <p>Two or fewer right out of five:</p>
+        <ul class="chalk-list names">
+          <li>Daniel T</li><li>Aisha K</li><li>John M</li>
+        </ul>
+        <p><a class="chalk-link" href="student-detail.html">Open the mark book</a></p>
+        <h3>Suggested next step</h3>
+        <p>Reteach multiplying out a bracket with one question on the board, for example <span class="maths">4(x + 1) = 28</span>, before setting more.</p>
+      </section>
 
-    <section class="panel">
-      <h2>Prepared Lesson Plan</h2>
-      <div class="lesson-plan-item">
-        <strong>Week 2: Multi-step Distribution (40 min)</strong>
-        <p>Objective: Students solve equations with brackets and isolate x accurately.</p>
-        <span class="badge" id="plan-status">Closed to students</span>
+      <section class="chalk-box" aria-labelledby="cls-h">
+        <h2 id="cls-h">Classes</h2>
+        <ul class="class-list">
+          <li>Form 1 Mathematics <span>no demo data</span></li>
+          <li class="active">Form 2 Mathematics <span>on the board now</span></li>
+          <li>Form 3 Mathematics <span>no demo data</span></li>
+          <li>Form 4 Mathematics <span>no demo data</span></li>
+        </ul>
+        <h3>Prepared lesson</h3>
+        <p>Week 2: multi-step distribution, 40 minutes. <a class="chalk-link" href="lesson-plan.html">Read the plan</a></p>
+        <div class="plan-status">
+        <p><span class="hand">Lesson 3 is</span> <strong class="status-chip" id="plan-status">closed to students</strong></p>
+        <button type="button" class="btn chalk-btn primary" id="plan-toggle" aria-pressed="false">Open to students</button>
+        <p class="small" id="plan-feedback" role="status" aria-live="polite">In this prototype the switch only changes this board.</p>
       </div>
-      <div class="actions">
-        <button class="primary" id="open-plan-btn">Open to Students</button>
-      </div>
-      <p id="open-plan-feedback" class="feedback neutral">When opened, this lesson appears as the active node on student path.</p>
-    </section>
+      </section>
+    </div>
   </main>
-  <script src="teacher.js"></script>
+  <footer class="board-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+  </footer>
+</div>
+<div class="ledge" aria-hidden="true"><span class="chalk-stick"></span><span class="chalk-stick yellow"></span><span class="chalk-stick pink"></span><span class="duster"></span></div>
+<script type="module" src="../assets/js/teacher.mjs"></script>
 </body>
 </html>

@@ -1,55 +1,96 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Practice</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice: MathPath</title>
+<meta name="description" content="Algebra questions generated fresh each time on a four-level ladder. Three right in a row moves you up, two misses moves you down.">
+<meta name="theme-color" content="#fdfcf7">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Practice: MathPath">
+<meta property="og:description" content="Algebra questions generated fresh each time on a four-level ladder. Three right in a row moves you up, two misses moves you down.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/student/practice.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/student.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Student</h1>
-      <p>Optional extra practice to build confidence.</p>
-    </header>
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏠 Home</span></a>
-      <a href="practice.html"><span class="nav-pill active">🎯 Practice</span></a>
-      <a href="results.html"><span class="nav-pill">📊 Results + Progress</span></a>
-      <a href="profile.html"><span class="nav-pill">👤 Profile</span></a>
+<body class="student" data-page="practice">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="book">
+  <header class="book-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>algebra exercise book</span></p>
+    <nav class="tabs" aria-label="Student book">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-home"/></svg><span>Home</span></a>
+      <a href="practice.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Practice</span></a>
+      <a href="results.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Results</span></a>
+      <a href="profile.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-sticker"/></svg><span>Stickers</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> Classmates and class scores are scripted. Your answers are marked for real and kept in this browser only.</span></p>
+  <main id="main">
+    <div class="page-title">
+      <h1>Practice</h1>
+      <p>Fresh questions every time, on a ladder of four levels.</p>
+    </div>
 
-    <section class="panel">
-      <h2>Practice: Solve for x</h2>
-      <p class="muted">This section is optional and does not block lesson progression.</p>
-      <p class="math" id="practice-problem">2x + 3 = 11</p>
-      <label for="practice-answer">Enter x</label>
-      <input id="practice-answer" type="text" placeholder="Type answer here">
-      <div class="actions">
-        <button class="primary" id="practice-check">Submit</button>
-        <button class="secondary" id="toggle-practice-hint">Show Hint</button>
-        <button class="secondary" id="scan-working-btn">Scan Working</button>
+    <div class="lesson-cols practice-cols">
+    <section class="quiz" aria-labelledby="quiz-h">
+      <div class="quiz-head">
+        <h2 id="quiz-h">Solve for x</h2>
+        <p class="q-count" id="q-count"></p>
       </div>
-      <p class="hint hidden" id="practice-hint">Hint: Move constants first, then divide by coefficient.</p>
-      <p id="practice-feedback" class="feedback neutral">The drill adapts when you get questions correct and when you miss them.</p>
-
-      <div id="scan-panel" class="scan-panel hidden">
-        <strong>Scanned Working Demo</strong>
-        <p class="muted">Example uploaded from an online worksheet for question: 2x + 3 = 11</p>
-        <pre class="scan-sample">2x + 3 = 11
-2x = 11 + 3
-2x = 14
-x = 6</pre>
-        <p class="pinpoint" style="display:block;">Where it went wrong: the student added 3 instead of subtracting 3 from both sides.</p>
+      <p class="question maths" id="q-text">x + 5 = 12</p>
+      <form id="answer-form" class="answer" action="#" novalidate>
+        <label for="answer" class="maths">x =</label>
+        <input id="answer" name="x" type="text" inputmode="decimal" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" aria-describedby="answer-help">
+        <button type="button" class="key" data-key="sign" aria-label="Switch between negative and positive">±</button>
+        <button type="button" class="key" data-key="/" aria-label="Fraction bar">/</button>
+        <button type="submit" class="btn primary" id="check">Check answer</button>
+        <p id="answer-help" class="small">A whole number, a fraction such as 16/3, or a decimal to 2 places. Press Enter to check.</p>
+      </form>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      <div class="next-row">
+        <button type="button" class="btn primary" id="next" hidden>Next question</button>
+        <button type="button" class="btn" id="reveal" hidden>Show the answer and move on</button>
       </div>
+      <div class="tools">
+        <button type="button" class="btn tool" id="t-word" aria-expanded="false" aria-controls="p-word"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-speech"/></svg><span>Show it as a word problem</span></button>
+        <button type="button" class="btn tool" id="t-hint" aria-expanded="false" aria-controls="p-hint"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-bulb"/></svg><span>Show a hint</span></button>
+        <button type="button" class="btn tool" id="t-marked" aria-expanded="false" aria-controls="p-marked"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pen"/></svg><span>See an example of marked working</span></button>
+      </div>
+      <div id="p-word" class="note speech" hidden></div>
+      <div id="p-hint" class="note sticky" hidden></div>
+      <div id="p-marked" class="scrap" hidden></div>
+      <noscript><p class="note sticky">Marking needs JavaScript. The worked example above still reads without it.</p></noscript>
     </section>
+
+      <section class="worksheet ladder-panel" aria-labelledby="lad-h">
+        <h2 id="lad-h">Your level</h2>
+        <p class="pen" id="ladder-status">Level 1 of 4: One step</p>
+        <p class="pips" id="ladder-pips"><span class="pip-label">Right in a row</span> <span class="pip-set" aria-hidden="true"><span class="pip"></span><span class="pip"></span><span class="pip"></span></span> <span id="pips-text">0 of 3</span></p>
+        <ol class="ladder" id="ladder">
+          <li data-level="4"><span class="rung-n">4</span><span class="rung-text"><strong>Negatives and x on both sides</strong> <span class="maths">5x − 3 = 2x + 9</span></span></li>
+          <li data-level="3"><span class="rung-n">3</span><span class="rung-text"><strong>Brackets</strong> <span class="maths">3(x + 2) = 18</span></span></li>
+          <li data-level="2"><span class="rung-n">2</span><span class="rung-text"><strong>Two steps</strong> <span class="maths">2x + 3 = 11</span></span></li>
+          <li data-level="1"><span class="rung-n">1</span><span class="rung-text"><strong>One step</strong> <span class="maths">x + 5 = 12</span></span></li>
+        </ol>
+        <p class="small">3 right first time in a row: up a level. 2 misses in a row: down a level. Only your first try at each question counts.</p>
+      </section>
+    </div>
   </main>
-  <script src="practice.js"></script>
+  <footer class="book-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+    <a href="../teacher/index.html">Teacher's board</a>
+  </footer>
+</div>
+<script type="module" src="../assets/js/student.mjs"></script>
 </body>
 </html>

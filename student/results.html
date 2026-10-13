@@ -1,61 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathPath Results</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results: MathPath</title>
+<meta name="description" content="What you have answered in this browser: lessons done, accuracy by level and the slips the marker spotted.">
+<meta name="theme-color" content="#fdfcf7">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Results: MathPath">
+<meta property="og:description" content="What you have answered in this browser: lessons done, accuracy by level and the slips the marker spotted.">
+<meta property="og:url" content="https://nathankagoro.github.io/mathpath-prototype/student/results.html">
+<meta property="og:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nathankagoro.github.io/mathpath-prototype/assets/og.jpg">
+<link rel="preload" href="../assets/fonts/kalam-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/andika-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/student.css">
 </head>
-<body>
-  <div class="bg-shape bg-shape-top"></div>
-  <div class="bg-shape bg-shape-bottom"></div>
-
-  <main class="shell">
-    <header class="top-header">
-      <h1>MathPath Student</h1>
-      <p>Lesson outcomes and mastery progress in one view.</p>
-    </header>
-    <nav class="top-nav">
-      <a href="index.html"><span class="nav-pill">🏠 Home</span></a>
-      <a href="practice.html"><span class="nav-pill">🎯 Practice</span></a>
-      <a href="results.html"><span class="nav-pill active">📊 Results + Progress</span></a>
-      <a href="profile.html"><span class="nav-pill">👤 Profile</span></a>
+<body class="student" data-page="results">
+<a class="skip" href="#main">Skip to the page</a>
+<div class="book">
+  <header class="book-head">
+    <p class="brand"><a href="index.html">MathPath</a> <span>algebra exercise book</span></p>
+    <nav class="tabs" aria-label="Student book">
+      <a href="index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-home"/></svg><span>Home</span></a>
+      <a href="practice.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-pencil"/></svg><span>Practice</span></a>
+      <a href="results.html" aria-current="page"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-marks"/></svg><span>Results</span></a>
+      <a href="profile.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-sticker"/></svg><span>Stickers</span></a>
+      <a href="../index.html"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-book"/></svg><span>Cover</span></a>
     </nav>
+  </header>
+  <p class="demo-note"><svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><use href="../assets/icons.svg#i-info"/></svg><span><strong>Demo.</strong> Classmates and class scores are scripted. Your answers are marked for real and kept in this browser only.</span></p>
+  <main id="main">
+    <div class="page-title">
+      <h1>Results</h1>
+      <p>Everything here comes from the answers you have checked in this browser.</p>
+    </div>
 
-    <section class="panel">
-      <h2>Lesson Complete</h2>
-      <div class="result-grid">
-        <div class="chip"><span>Score</span><strong>78%</strong></div>
-        <div class="chip"><span>XP Earned</span><strong>+120</strong></div>
-        <div class="chip"><span>Mastery Gain</span><strong>+12%</strong></div>
-      </div>
-      <div class="two-col" style="margin-top:14px;">
-        <div>
-          <h3>Strengths</h3>
-          <ul>
-            <li>Correctly solved one-step equations for x</li>
-            <li>Improved on substitution tasks</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Needs Practice</h3>
-          <ul>
-            <li>Distribution before solving for x</li>
-            <li>Negative sign handling</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3 style="margin-top:16px;">Mastery Progress</h3>
-      <div class="mastery-item"><span>Variables</span><div class="bar"><div class="fill" style="width:80%"></div></div><span>80%</span></div>
-      <div class="mastery-item"><span>Distribution</span><div class="bar"><div class="fill" style="width:50%"></div></div><span>50%</span></div>
-      <div class="mastery-item"><span>Word Problems</span><div class="bar"><div class="fill" style="width:30%"></div></div><span>30%</span></div>
-      <div class="mastery-item"><span>Equations</span><div class="bar"><div class="fill" style="width:70%"></div></div><span>70%</span></div>
-      <div class="callout">Next recommendation: complete Distribution reinforcement homework to unlock Word Problems.</div>
+    <section class="worksheet" id="results-empty">
+      <h2>Nothing marked yet</h2>
+      <p>Answer a question and it will show up here.</p>
+      <p><a class="btn primary" href="lesson-introduction.html">Start lesson 1</a> <a class="btn" href="practice.html">Go to practice</a></p>
     </section>
+
+    <div id="results-body" hidden>
+      <dl class="totals big">
+        <div><dt>Answers checked</dt><dd id="res-answered">0</dd></div>
+        <div><dt>Right first time</dt><dd id="res-accuracy">0%</dd></div>
+        <div><dt>XP</dt><dd id="res-xp">0</dd></div>
+      </dl>
+      <p class="pen next-step" id="res-next"></p>
+      <div class="results-cols">
+        <section class="worksheet" aria-labelledby="rl-h">
+          <h2 id="rl-h">Lessons</h2>
+          <ul class="plain-list" id="res-lessons"></ul>
+        </section>
+        <section class="worksheet" aria-labelledby="rm-h">
+          <h2 id="rm-h">Right first time, by level</h2>
+          <div id="res-mastery"></div>
+        </section>
+        <section class="worksheet" aria-labelledby="rs-h">
+          <h2 id="rs-h">Slips the marker spotted</h2>
+          <ul class="plain-list" id="res-slips"></ul>
+          <p class="small">A slip is counted when your wrong answer is exactly what that mistake produces.</p>
+        </section>
+      </div>
+    </div>
   </main>
+  <footer class="book-foot">
+    <a href="https://nathankagoro.com">← nathankagoro.com</a>
+    <a href="../teacher/index.html">Teacher's board</a>
+  </footer>
+</div>
+<script type="module" src="../assets/js/student.mjs"></script>
 </body>
 </html>
