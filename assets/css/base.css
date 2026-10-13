@@ -1,0 +1,72 @@
+/* Shared by the cover, the student book and the teacher's board. */
+@font-face { font-family: "Kalam"; src: url("../fonts/kalam-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Kalam"; src: url("../fonts/kalam-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --hand: "Kalam", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  --plain: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --paper: #fdfcf7;
+  --grid: #cfe1ee;
+  --margin-red: #e0424e;
+  --graphite: #2b2d33;
+  --graphite-soft: #50545e;
+  --biro: #1c3d9e;
+  --red-pen: #c21f2e;
+  --highlighter: #fff07a;
+  --sticky: #ffe680;
+  --board: #25483b;
+  --board-deep: #1c392f;
+  --chalk: #f5f2e6;
+  --chalk-soft: #d3ddd6;
+  --chalk-yellow: #ffe27a;
+  --chalk-pink: #ffbcc7;
+  --wood: #9b6a3a;
+  --wobble: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --wobble-2: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  --focus: #1c3d9e;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 400 1.0625rem/1.5 var(--plain);
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--graphite);
+}
+h1, h2, h3, .hand { font-family: var(--hand); font-weight: 700; line-height: 1.15; margin: 0; }
+p, ul, ol { margin: 0; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+img, svg { max-width: 100%; }
+
+/* Maths stays in the plain face so signs and digits are unambiguous. */
+.maths { font-family: var(--plain); font-weight: 700; font-variant-numeric: tabular-nums lining-nums; white-space: nowrap; }
+
+.icon { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[hidden] { display: none !important; }
+
+.skip { position: absolute; left: 8px; top: -60px; z-index: 20; background: var(--highlighter); color: var(--graphite); padding: 12px 16px; font-weight: 700; }
+.skip:focus { top: 8px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+/* Stickers press on when earned. */
+.sticker { width: 72px; height: 72px; flex: none; filter: drop-shadow(0 2px 0 rgba(43, 45, 51, 0.25)); }
+.sticker.pressing { animation: press 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+@keyframes press {
+  0% { transform: scale(1.7) rotate(-14deg); opacity: 0; }
+  55% { transform: scale(0.92) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
