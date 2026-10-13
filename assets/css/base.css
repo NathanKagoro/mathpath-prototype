@@ -52,6 +52,7 @@ img, svg { max-width: 100%; }
 .skip { position: absolute; left: 8px; top: -60px; z-index: 20; background: var(--highlighter); color: var(--graphite); padding: 12px 16px; font-weight: 700; }
 .skip:focus { top: 8px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+[tabindex="-1"]:focus { outline: none; }
 
 /* Stickers press on when earned. */
 .sticker { width: 72px; height: 72px; flex: none; filter: drop-shadow(0 2px 0 rgba(43, 45, 51, 0.25)); }

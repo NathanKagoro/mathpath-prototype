@@ -7,9 +7,9 @@
 // Uses `puppeteer` when installed (CI), otherwise `puppeteer-core` with
 // CHROME_PATH pointing at a local Chrome.
 
-const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { serve, launchBrowser } = require('./serve.cjs');
 
 const siteDir = path.resolve(process.argv[2] || '.');
 const outDir = path.resolve(process.argv[3] || 'shots');
@@ -21,29 +21,9 @@ const PAGES = [
   'teacher/homework.html', 'teacher/student-detail.html',
 ];
 const WIDTHS = [[1440, 900], [390, 844], [360, 800]];
-const TYPES = { '.html': 'text/html; charset=utf-8', '.mjs': 'text/javascript', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.png': 'image/png' };
-
-function serve() {
-  return http.createServer((req, res) => {
-    let p = decodeURIComponent(req.url.split('?')[0]);
-    if (!p.startsWith(BASE)) { res.writeHead(404); return res.end('outside base'); }
-    let file = path.join(siteDir, p.slice(BASE.length) || 'index.html');
-    if (!file.startsWith(siteDir)) { res.writeHead(403); return res.end(); }
-    if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
-    if (!fs.existsSync(file)) { res.writeHead(404); return res.end('not found'); }
-    res.writeHead(200, { 'content-type': TYPES[path.extname(file)] || 'application/octet-stream' });
-    fs.createReadStream(file).pipe(res);
-  }).listen(PORT, '127.0.0.1');
-}
-
 (async () => {
-  let puppeteer, launch = { headless: true, args: ['--no-sandbox'] };
-  try { puppeteer = require('puppeteer'); } catch {
-    puppeteer = require('puppeteer-core');
-    launch.executablePath = process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-  }
-  const server = serve();
-  const browser = await puppeteer.launch(launch);
+  const server = serve(siteDir, PORT, BASE);
+  const browser = await launchBrowser();
   fs.mkdirSync(outDir, { recursive: true });
   let problems = 0;
   for (const pg of PAGES) {
